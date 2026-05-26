@@ -1,0 +1,16 @@
+# OI Research — Python dependencies
+# Install with: pip install -r requirements.txt
+# For GPU (RTX 5070 Ti / CUDA 12.8):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+torch>=2.8.0
+snntorch>=0.9.0
+brian2>=2.6.0
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+pandas>=2.0.0
+tqdm>=4.65.0
+elephant>=0.13.0
+neo>=0.13.0
+quantities>=0.14.0
