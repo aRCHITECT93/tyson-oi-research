@@ -1,5 +1,5 @@
-# Hybrid Biological-Silicon Architecture (HBSA)
-*Theoretical Framework — Tyson, May 2026*
+﻿# Hybrid Biological-Silicon Architecture (HBSA)
+*Theoretical Framework â€” Tyson, May 2026*
 
 ---
 
@@ -18,7 +18,7 @@ builds that specification from first principles.
 **1. Energy efficiency at scale**
 - Human neuron: ~10 fJ per spike
 - GPU equivalent op: ~1 pJ (100x more expensive)
-- At 1M neurons × 10 Hz: organoid = 100 mW, GPU = 10 W
+- At 1M neurons Ã— 10 Hz: organoid = 100 mW, GPU = 10 W
 
 **2. Temporal integration with adaptation**
 - Spike-frequency adaptation + STDP = natural working memory
@@ -46,7 +46,7 @@ builds that specification from first principles.
 - Speed gap: ~4 million x in favor of silicon (for parallelizable tasks)
 
 **3. Reproducibility**
-- Same weights → same output (silicon)
+- Same weights â†’ same output (silicon)
 - Organoids drift, die, vary between cultures
 
 **4. Programmability**
@@ -58,28 +58,28 @@ builds that specification from first principles.
 ## 2. The HBSA Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    TASK ROUTER                          │
-│         (GPU-based, learned routing policy)             │
-└─────────┬───────────────────────┬───────────────────────┘
-          │                       │
-          ▼                       ▼
-┌─────────────────┐    ┌─────────────────────────────┐
-│   SILICON LAYER │    │     BIOLOGICAL LAYER        │
-│                 │    │                             │
-│  Exact compute  │    │  Organoid reservoir(s)      │
-│  LLM inference  │◄──►│  MEA interface              │
-│  Vector search  │    │  Temporal integration       │
-│  Optimization   │    │  Adaptive pattern matching  │
-└─────────────────┘    └─────────────────────────────┘
-          │                       │
-          └───────────┬───────────┘
-                      ▼
-              ┌───────────────┐
-              │  INTEGRATION  │
-              │    LAYER      │
-              │  (GPU-based)  │
-              └───────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                    TASK ROUTER                          â”‚
+â”‚         (GPU-based, learned routing policy)             â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚                       â”‚
+          â–¼                       â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   SILICON LAYER â”‚    â”‚     BIOLOGICAL LAYER        â”‚
+â”‚                 â”‚    â”‚                             â”‚
+â”‚  Exact compute  â”‚    â”‚  Organoid reservoir(s)      â”‚
+â”‚  LLM inference  â”‚â—„â”€â”€â–ºâ”‚  MEA interface              â”‚
+â”‚  Vector search  â”‚    â”‚  Temporal integration       â”‚
+â”‚  Optimization   â”‚    â”‚  Adaptive pattern matching  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚                       â”‚
+          â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                      â–¼
+              â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+              â”‚  INTEGRATION  â”‚
+              â”‚    LAYER      â”‚
+              â”‚  (GPU-based)  â”‚
+              â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ### 2.1 Task Router
@@ -90,12 +90,12 @@ A learned policy (trainable via RL) that:
 
 ### 2.2 Biological Layer Interface
 ```
-Silicon → Biological:
+Silicon â†’ Biological:
   1. Encode input as stimulation pattern (MEAEncoder)
   2. Apply via FinalSpark API (or local MEA device)
-  3. Wait for response window (5–50ms)
+  3. Wait for response window (5â€“50ms)
   
-Biological → Silicon:
+Biological â†’ Silicon:
   1. Record spike patterns from MEA
   2. Decode via trained linear readout
   3. Return as floating point tensor
@@ -104,7 +104,7 @@ Biological → Silicon:
 ### 2.3 Latency Model
 ```
 T_biological = T_stim + T_propagation + T_readout
-             ≈ 1ms + 20ms + 5ms
+             â‰ˆ 1ms + 20ms + 5ms
              = ~26ms per query
 
 T_silicon    = depends on model
@@ -113,7 +113,7 @@ T_silicon    = depends on model
 ```
 
 **Key insight:** For tasks that take >26ms on silicon AND where
-biological compute quality is acceptable — route to organoid.
+biological compute quality is acceptable â€” route to organoid.
 
 ---
 
@@ -158,13 +158,13 @@ Optimize for Pareto frontier.
 The MEA is a noisy channel between silicon and organoid.
 By Shannon's theorem:
 ```
-C = B · log₂(1 + SNR)
+C = B Â· logâ‚‚(1 + SNR)
 ```
 
 For a 64-electrode MEA:
-- B ≈ 10 kHz per channel
-- SNR ≈ 20 dB (typical MEA recording)
-- C ≈ 64 × 10k × log₂(101) ≈ 4.2 Mbps
+- B â‰ˆ 10 kHz per channel
+- SNR â‰ˆ 20 dB (typical MEA recording)
+- C â‰ˆ 64 Ã— 10k Ã— logâ‚‚(101) â‰ˆ 4.2 Mbps
 
 **Implication:** The biological layer can receive at most ~4 Mbps
 of useful information from silicon. This bottleneck constrains
@@ -173,23 +173,23 @@ what tasks are feasible to route to the organoid.
 ### 4.2 Effective Organoid Bandwidth
 With N neurons, firing rate f, and readout resolution R:
 ```
-B_organoid ≈ N × f × R
-           = 500k × 10 Hz × 1 bit
+B_organoid â‰ˆ N Ã— f Ã— R
+           = 500k Ã— 10 Hz Ã— 1 bit
            = 5 Mbps outgoing
 ```
 
-Roughly matched to MEA input bandwidth — the system is balanced.
+Roughly matched to MEA input bandwidth â€” the system is balanced.
 
 ### 4.3 Energy Efficiency Crossover
 At what task complexity does biological outperform silicon?
 
 ```
-E_silicon   = FLOPS × energy_per_FLOP
-E_biological = N_spikes × energy_per_spike
+E_silicon   = FLOPS Ã— energy_per_FLOP
+E_biological = N_spikes Ã— energy_per_spike
 
-Break-even: FLOPS > (E_bio / E_silicon_per_FLOP) × N_spikes
-                  ≈ (100mJ / 1pJ) × 10,000
-                  ≈ 10^15 FLOPS
+Break-even: FLOPS > (E_bio / E_silicon_per_FLOP) Ã— N_spikes
+                  â‰ˆ (100mJ / 1pJ) Ã— 10,000
+                  â‰ˆ 10^15 FLOPS
 ```
 
 Above ~10^15 FLOPS of silicon-equivalent work per decision:
@@ -202,9 +202,9 @@ This is in reach for complex temporal reasoning tasks.
 
 To test HBSA before we have a real organoid:
 
-1. **Simulate organoid layer** → OrganoidReservoir (done)
-2. **Add silicon layer** → PyTorch GPU model (done)
-3. **Implement router** → simple heuristic first
+1. **Simulate organoid layer** â†’ OrganoidReservoir (done)
+2. **Add silicon layer** â†’ PyTorch GPU model (done)
+3. **Implement router** â†’ simple heuristic first
 4. **Benchmark on tasks:**
    - Chaotic time series prediction (organoid advantage)
    - MNIST classification (silicon advantage)

@@ -1,20 +1,20 @@
-# Organoid Intelligence Research Foundation
+﻿# Organoid Intelligence Research Foundation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.8%2B-red.svg)](https://pytorch.org/)
 [![CUDA](https://img.shields.io/badge/CUDA-12.8-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 
-*Tyson ([@aRCHITECT93](https://github.com/aRCHITECT93)) — May 2026*
+*Tyson Guerrero ([@aRCHITECT93](https://github.com/aRCHITECT93)) â€” May 2026*
 
 > Building the theoretical and computational foundation for organoid intelligence (OI) research.
-> No wetlab required — pure brain power + simulation + theory.
+> No wetlab required â€” pure brain power + simulation + theory.
 
 ---
 
 ## What This Is
 
-This project is a personal research foundation for the field of **organoid intelligence** —
+This project is a personal research foundation for the field of **organoid intelligence** â€”
 the science of using human brain organoids (lab-grown neuron clusters) as computing systems.
 
 The goal is to:
@@ -30,24 +30,24 @@ The goal is to:
 
 ```
 OI_Research/
-├── run.py                          ← START HERE — run any experiment
-│
-├── simulations/
-│   ├── neuron_models.py            ← LIF, AdEx, Izhikevich, Hodgkin-Huxley + GPU pop
-│   ├── stdp.py                     ← Classical, Multiplicative, Triplet, R-STDP + GPU layer
-│   ├── reservoir.py                ← ESN, LSM (spiking), OrganoidReservoir, Analyzer
-│   └── pong_experiment.py          ← DishBrain Pong replication (ESN + LSM controllers)
-│
-├── experiments/
-│   ├── scaling_study.py            ← ORIGINAL RESEARCH: OI scaling laws
-│   └── results/                    ← All plots and data saved here
-│
-├── theory/
-│   ├── open_problems.md            ← 6 open problems with our research angles
-│   ├── free_energy_bridge.md       ← FEP ↔ R-STDP theoretical bridge (draft)
-│   └── hybrid_architecture.md     ← Biological-silicon hybrid architecture spec
-│
-└── data/                           ← For real organoid recordings (FinalSpark, Allen)
+â”œâ”€â”€ run.py                          â† START HERE â€” run any experiment
+â”‚
+â”œâ”€â”€ simulations/
+â”‚   â”œâ”€â”€ neuron_models.py            â† LIF, AdEx, Izhikevich, Hodgkin-Huxley + GPU pop
+â”‚   â”œâ”€â”€ stdp.py                     â† Classical, Multiplicative, Triplet, R-STDP + GPU layer
+â”‚   â”œâ”€â”€ reservoir.py                â† ESN, LSM (spiking), OrganoidReservoir, Analyzer
+â”‚   â””â”€â”€ pong_experiment.py          â† DishBrain Pong replication (ESN + LSM controllers)
+â”‚
+â”œâ”€â”€ experiments/
+â”‚   â”œâ”€â”€ scaling_study.py            â† ORIGINAL RESEARCH: OI scaling laws
+â”‚   â””â”€â”€ results/                    â† All plots and data saved here
+â”‚
+â”œâ”€â”€ theory/
+â”‚   â”œâ”€â”€ open_problems.md            â† 6 open problems with our research angles
+â”‚   â”œâ”€â”€ free_energy_bridge.md       â† FEP â†” R-STDP theoretical bridge (draft)
+â”‚   â””â”€â”€ hybrid_architecture.md     â† Biological-silicon hybrid architecture spec
+â”‚
+â””â”€â”€ data/                           â† For real organoid recordings (FinalSpark, Allen)
 ```
 
 ---
@@ -56,11 +56,11 @@ OI_Research/
 
 ### Organoid Scaling Laws (Original Research)
 ![Scaling Laws](experiments/results/scaling/scaling_preprint.png)
-*Memory Capacity scales as MC ~ N^0.477 — more favorable than LLM scaling (Chinchilla: N^-0.076)*
+*Memory Capacity scales as MC ~ N^0.477 â€” more favorable than LLM scaling (Chinchilla: N^-0.076)*
 
 ### DishBrain Pong Replication
 ![Pong Learning Curve](experiments/results/pong_esn_v2.png)
-*ESN+FORCE controller achieves 67.4% hit rate — genuine learning from sparse reward signal*
+*ESN+FORCE controller achieves 67.4% hit rate â€” genuine learning from sparse reward signal*
 
 ---
 
@@ -99,7 +99,7 @@ python run.py all           # Full suite
 |---|---|
 | Classical STDP | Additive weight changes |
 | Multiplicative STDP | Weight-dependent, more stable |
-| R-STDP | Reward-gated — the DishBrain mechanism |
+| R-STDP | Reward-gated â€” the DishBrain mechanism |
 | GPU STDP Layer | PyTorch layer with online STDP updates |
 
 ### Reservoir Computing (`simulations/reservoir.py`)
@@ -113,10 +113,10 @@ python run.py all           # Full suite
 ### Experiments
 | Experiment | Status | Description |
 |---|---|---|
-| DishBrain Pong | ✅ Complete | Replication of Kagan 2022 |
-| Scaling Laws | ✅ Complete | Original research, power law fits |
-| FEP Bridge | 🔬 In progress | Theoretical, mathematical |
-| Hybrid Architecture | 📐 Design phase | Spec written, simulation pending |
+| DishBrain Pong | âœ… Complete | Replication of Kagan 2022 |
+| Scaling Laws | âœ… Complete | Original research, power law fits |
+| FEP Bridge | ðŸ”¬ In progress | Theoretical, mathematical |
+| Hybrid Architecture | ðŸ“ Design phase | Spec written, simulation pending |
 
 ---
 
@@ -124,21 +124,21 @@ python run.py all           # Full suite
 
 See `theory/open_problems.md` for full details. The three highest priority:
 
-1. **Encoding Problem** — Optimal input → MEA stimulation mapping
-2. **FEP-STDP Bridge** — Proving R-STDP = active inference
-3. **Scaling Laws** — Do organoids scale like LLMs? (We're measuring this)
+1. **Encoding Problem** â€” Optimal input â†’ MEA stimulation mapping
+2. **FEP-STDP Bridge** â€” Proving R-STDP = active inference
+3. **Scaling Laws** â€” Do organoids scale like LLMs? (We're measuring this)
 
 ---
 
 ## Tech Stack
 
 - **Python 3.9** + virtual environment
-- **PyTorch 2.8 + CUDA 12.8** — GPU-accelerated SNN simulation on RTX 5070 Ti
-- **snntorch 0.9** — Spiking neural network library
-- **Brian2** — Biophysical neural simulation
-- **NumPy/SciPy** — Numerical computation
-- **Matplotlib** — Visualization
-- **Elephant/NEO** — Neural data analysis (MEA format compatibility)
+- **PyTorch 2.8 + CUDA 12.8** â€” GPU-accelerated SNN simulation on RTX 5070 Ti
+- **snntorch 0.9** â€” Spiking neural network library
+- **Brian2** â€” Biophysical neural simulation
+- **NumPy/SciPy** â€” Numerical computation
+- **Matplotlib** â€” Visualization
+- **Elephant/NEO** â€” Neural data analysis (MEA format compatibility)
 
 ---
 
@@ -146,34 +146,34 @@ See `theory/open_problems.md` for full details. The three highest priority:
 
 ```
 NOW (May 2026)
-  ✅ Neuron models (LIF, AdEx, Izh, HH)
-  ✅ STDP rules (Classical, Mult, R-STDP, GPU)
-  ✅ Reservoir systems (ESN, LSM, Organoid)
-  ✅ DishBrain Pong replication
-  ✅ Scaling laws experiment
-  ✅ Theory documents (3 open problems developed)
+  âœ… Neuron models (LIF, AdEx, Izh, HH)
+  âœ… STDP rules (Classical, Mult, R-STDP, GPU)
+  âœ… Reservoir systems (ESN, LSM, Organoid)
+  âœ… DishBrain Pong replication
+  âœ… Scaling laws experiment
+  âœ… Theory documents (3 open problems developed)
 
 MONTH 2
-  □ Run full scaling study, analyze results
-  □ Work through FEP-STDP math proof
-  □ Implement Φ (integrated information) calculator
-  □ Apply for FinalSpark research access
+  â–¡ Run full scaling study, analyze results
+  â–¡ Work through FEP-STDP math proof
+  â–¡ Implement Î¦ (integrated information) calculator
+  â–¡ Apply for FinalSpark research access
 
 MONTH 3
-  □ Draft arXiv preprint on scaling laws
-  □ First real organoid experiment (FinalSpark)
-  □ Begin hybrid architecture simulation
+  â–¡ Draft arXiv preprint on scaling laws
+  â–¡ First real organoid experiment (FinalSpark)
+  â–¡ Begin hybrid architecture simulation
 ```
 
 ---
 
 ## Key Papers to Read
 
-1. Kagan et al. 2022 — "In vitro neurons learn and exhibit sentience..." (DishBrain)
-2. Smirnova et al. 2023 — OI Roadmap (Johns Hopkins)
-3. Friston 2010 — Free Energy Principle
-4. Maass 2002 — Liquid State Machines
-5. Pfister & Gerstner 2006 — Triplet STDP
+1. Kagan et al. 2022 â€” "In vitro neurons learn and exhibit sentience..." (DishBrain)
+2. Smirnova et al. 2023 â€” OI Roadmap (Johns Hopkins)
+3. Friston 2010 â€” Free Energy Principle
+4. Maass 2002 â€” Liquid State Machines
+5. Pfister & Gerstner 2006 â€” Triplet STDP
 
 ---
 

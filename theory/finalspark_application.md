@@ -1,8 +1,8 @@
-# FinalSpark Research Access Application
-*Ready to send — edit [bracketed] fields before sending*
+﻿# FinalSpark Research Access Application
+*Ready to send â€” edit [bracketed] fields before sending*
 
 **To:** research@finalspark.com
-**Subject:** Research Access Request — Organoid Scaling Laws + FEP-STDP Bridge
+**Subject:** Research Access Request â€” Organoid Scaling Laws + FEP-STDP Bridge
 
 ---
 
@@ -22,24 +22,24 @@ roadmap published by Smirnova et al. (2023).
 
 I have developed a full simulation stack for organoid intelligence research:
 
-1. **Biophysical neuron models** — LIF, AdEx, Izhikevich, and Hodgkin-Huxley
+1. **Biophysical neuron models** â€” LIF, AdEx, Izhikevich, and Hodgkin-Huxley
    implementations with GPU-accelerated population simulation (CUDA)
 
-2. **OrganoidReservoir** — A MEA-coupled reservoir model using AdEx neurons,
+2. **OrganoidReservoir** â€” A MEA-coupled reservoir model using AdEx neurons,
    reward-modulated STDP (R-STDP), and biologically heterogeneous parameters.
    The architecture directly mirrors the FinalSpark neuroplatform interface.
 
-3. **DishBrain Pong replication** — Computational replication of the Kagan 2022
+3. **DishBrain Pong replication** â€” Computational replication of the Kagan 2022
    experiment using both Echo State Network and Liquid State Machine controllers
    with FORCE learning, currently achieving >65% hit rate in simulation.
 
-4. **Scaling laws study** — An original research experiment measuring memory
+4. **Scaling laws study** â€” An original research experiment measuring memory
    capacity (MC) and kernel quality (KQ) as power functions of reservoir size N.
    Preliminary results: MC ~ N^0.877, which is more favorable scaling than
    large language models (Chinchilla: loss ~ N^-0.076). This has not been
    previously characterized in the literature.
 
-5. **FEP-STDP bridge** — A formal theoretical derivation showing that
+5. **FEP-STDP bridge** â€” A formal theoretical derivation showing that
    reward-modulated STDP is gradient descent on variational free energy
    (Friston's Free Energy Principle). This provides a principled explanation
    for why the chaos/ordered stimulation protocol in DishBrain works.
@@ -50,7 +50,7 @@ My simulation makes three concrete, testable predictions about real organoid
 behavior:
 
 **P1 (Precision-learning rate):** Learning rate should scale with MEA SNR.
-Higher-quality electrode contact → faster behavioral adaptation.
+Higher-quality electrode contact â†’ faster behavioral adaptation.
 *Test: vary stimulation amplitude, measure learning curve slope.*
 
 **P2 (Spontaneous activity as prior):** Between stimulation trials, population
@@ -62,7 +62,7 @@ the entropy contrast between "reward" and "punishment" stimulation patterns.
 *Test: vary chaos-to-ordered entropy ratio, measure learning rate.*
 
 Each prediction is derived from the FEP-STDP equivalence and can be tested
-with standard Neuroplatform API calls — no special wetlab protocols required.
+with standard Neuroplatform API calls â€” no special wetlab protocols required.
 
 **My setup**
 
@@ -99,4 +99,4 @@ tysonguerrero96@gmail.com
 
 **Follow-up if no response in 2 weeks:**
 Re-send to: contact@finalspark.com with subject line
-"Follow-up: Independent Research Access — Organoid Scaling Study"
+"Follow-up: Independent Research Access â€” Organoid Scaling Study"

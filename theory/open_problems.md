@@ -1,10 +1,10 @@
-# Open Problems in Organoid Intelligence
-*Living document — updated as research progresses*
-*Author: Tyson | Last updated: May 2026*
+﻿# Open Problems in Organoid Intelligence
+*Living document â€” updated as research progresses*
+*Author: Tyson Guerrero | Last updated: May 2026*
 
 ---
 
-## Tier 1 — Foundational Gaps (Publishable today)
+## Tier 1 â€” Foundational Gaps (Publishable today)
 
 ### 1. The Encoding Problem
 **What:** How do you optimally map information INTO an organoid via MEA stimulation?
@@ -27,7 +27,7 @@ organoid topology, connectivity, and the specific learning rule (R-STDP).
 **Key equation to formalize:**
 ```
 I*(S; X) = max_{encoding} I(S; f(X))
-subject to: metabolic cost C(S) ≤ C_max
+subject to: metabolic cost C(S) â‰¤ C_max
             organoid stability constraint: SR(W_rec) < 1
 ```
 
@@ -42,7 +42,7 @@ subject to: metabolic cost C(S) ≤ C_max
 **What:** Do OI systems follow power-law scaling like LLMs?
 
 Current state:
-- LLMs: loss ∝ N^(-α) where N = parameters (Chinchilla laws)
+- LLMs: loss âˆ N^(-Î±) where N = parameters (Chinchilla laws)
 - SNNs: some evidence of similar laws (not well characterized)
 - Organoids: NO systematic study exists
 
@@ -55,7 +55,7 @@ Current state:
 **Our angle:**
 - Use simulation (our OrganoidReservoir) to generate synthetic scaling data
 - Fit power laws to memory capacity, separation property as function of N
-- Extrapolate to real organoid sizes (1M–1B neurons)
+- Extrapolate to real organoid sizes (1Mâ€“1B neurons)
 - Compare to silicon equivalents on same tasks
 
 **Hypothesis:** Organoids have fundamentally different scaling exponents than
@@ -91,7 +91,7 @@ Nobody has applied state-space estimation formally to organoid decoding.
 
 ---
 
-## Tier 2 — Theoretical Contributions (3–6 months)
+## Tier 2 â€” Theoretical Contributions (3â€“6 months)
 
 ### 4. Free Energy Principle Bridge
 **What:** Karl Friston's Free Energy Principle (FEP) may be the correct
@@ -104,7 +104,7 @@ Current state:
 - But nobody has formally mapped FEP to the OI/MEA setting
 
 **The gap:** A formal derivation showing:
-  organoid + MEA feedback ≡ active inference under FEP
+  organoid + MEA feedback â‰¡ active inference under FEP
 
 **Key claim to prove:**
 The R-STDP learning rule emerges from minimizing variational free energy
@@ -114,10 +114,10 @@ If true: this gives us a principled theory of WHY organoids learn
 (not just empirical observation that they do).
 
 **Mathematical program:**
-1. Define organoid's generative model p(o, s | π) 
+1. Define organoid's generative model p(o, s | Ï€) 
    - o = MEA observations
    - s = internal states  
-   - π = "policies" (firing patterns)
+   - Ï€ = "policies" (firing patterns)
 2. Show R-STDP weight updates = gradient of -F
 3. Show game feedback = precision-weighted prediction error
 4. Derive bounds on learning speed from FEP parameters
@@ -151,33 +151,33 @@ GPUs are efficient at:
 - Exact numerical computation
 - Large-scale optimization
 
-A hybrid architecture routes tasks by type → significant efficiency gains.
+A hybrid architecture routes tasks by type â†’ significant efficiency gains.
 
 ---
 
 ### 6. Consciousness / Sentience Metrics
 **What:** Can we define a formal metric for "at what point does an organoid matter morally"?
 
-This is not just philosophy — it has direct experimental implications.
+This is not just philosophy â€” it has direct experimental implications.
 If we have a metric, we can:
 - Draw an ethical line in organoid size/complexity
 - Design experiments that stay on the right side
 - Contribute to policy (EU AI Act has nothing on organoids yet)
 
 **Existing frameworks:**
-- Integrated Information Theory (IIT): Φ measure
+- Integrated Information Theory (IIT): Î¦ measure
 - Global Workspace Theory: information broadcast
 - Higher-Order Theory: representations of representations
 
 **Our angle:**
-- Compute Φ (or cheaper approximations like ΦID) on our simulated organoids
-- Map how Φ scales with N, connectivity, maturation
+- Compute Î¦ (or cheaper approximations like Î¦ID) on our simulated organoids
+- Map how Î¦ scales with N, connectivity, maturation
 - Identify if there's a phase transition (threshold effect)
-- Argue for Φ-based ethical threshold in policy context
+- Argue for Î¦-based ethical threshold in policy context
 
 ---
 
-## Tier 3 — Long-term Moonshots (1–2 years)
+## Tier 3 â€” Long-term Moonshots (1â€“2 years)
 
 ### 7. Organoid as Foundation Model
 Can a sufficiently large, trained organoid perform few-shot learning like an LLM?
@@ -214,7 +214,7 @@ This has direct clinical applications (brain-computer interfaces, neurorehabilit
 
 - [ ] Run NARMA benchmark on OrganoidReservoir vs ESN
 - [ ] Map memory capacity as function of n_neurons (scaling)
-- [ ] Implement Φ calculation on small simulated networks
+- [ ] Implement Î¦ calculation on small simulated networks
 - [ ] Formalize FEP-STDP equivalence proof (draft)
 - [ ] Apply for FinalSpark research access
 - [ ] Download Allen Brain Atlas organoid recordings
