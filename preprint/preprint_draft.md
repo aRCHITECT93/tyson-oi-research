@@ -39,7 +39,7 @@ Here we address these questions with a systematic computational study. We measur
 x(t+1) = (1-α) x(t) + α tanh(W_res x(t) + W_in u(t) + ξ)
 ```
 
-where α is the leak rate (0.3), W_res is the sparse recurrent weight matrix scaled to spectral radius ρ, W_in is the fixed input weight matrix, u(t) is the input signal, and ξ ~ N(0, σ²) is additive noise (σ = 0.001). Connection sparsity scales with N as max(0.5, 1 - 10/N) to maintain approximately 10 incoming connections per neuron regardless of N — matching the local connectivity density of cortical organoids [7].
+where α is the leak rate (0.3), W_res is the sparse recurrent weight matrix scaled to spectral radius ρ, W_in is the fixed input weight matrix, u(t) is the input signal, and ξ ~ N(0, σ²) is additive noise (σ = 0.001). Connection sparsity scales with N as max(0.5, 1 - 10/N) to maintain approximately 10 incoming connections per neuron regardless of N, consistent with sparse cortical connectivity reported in the literature [7].
 
 **Liquid State Machine (LSM).** We implement a biologically-realistic spiking reservoir using the Izhikevich neuron model [8], chosen for its accurate reproduction of cortical firing patterns at low computational cost. The network contains 80% excitatory (regular spiking: a=0.02, b=0.2, c=-65, d=8) and 20% inhibitory (fast spiking: a=0.1, b=0.2, c=-65, d=2) neurons, consistent with Dale's law. Synaptic weights are typed by neuron class (W_EE=0.5, W_EI=0.7, W_IE=-1.0, W_II=-0.5) and connection probability scales identically to the ESN baseline.
 
@@ -113,14 +113,16 @@ Figure 1C shows the SR sweep results. All three spectral radii (0.7, 0.9, 0.95) 
 
 Figure 1E reveals the most striking result of this study. The spiking LSM reservoir achieves dramatically higher memory capacity than the rate-coded ESN at equivalent N, and crucially, shows **no saturation** across the full range studied:
 
-| N | ESN MC | LSM MC | LSM advantage |
+| N | ESN MC | LSM MC* | LSM/ESN ratio |
 |---|---|---|---|
-| 10 | 0.03 | 5.5 | 183× |
-| 50 | 0.80 | 26.0 | 32× |
-| 100 | 3.65 | 38.0 | 10× |
-| 200 | 7.61 | 58.5 | 7.7× |
-| 400 | 12.97 | 79.0 | 6.1× |
-| 800 | 12.24 | 94.0 | 7.7× |
+| 10 | 0.03 | 5.5 | ~183 |
+| 50 | 0.80 | 26.0 | ~33 |
+| 100 | 3.65 | 38.0 | ~10 |
+| 200 | 7.61 | 58.5 | ~8 |
+| 400 | 12.97 | 79.0 | ~6 |
+| 800 | 12.24 | 94.0 | ~8 |
+
+*LSM MC measured as matrix rank of spike population vectors (see Methods 2.2); not directly equivalent to ESN MC — ratios are indicative, not exact.
 
 While the ESN saturates near MC ≈ 13, the LSM continues growing to MC ≈ 94 at N = 800, with separation property (a proxy for input discriminability) also growing continuously: Sep(800) = 0.14 vs Sep(10) = 0.015.
 
@@ -163,7 +165,7 @@ The 7.7× memory capacity advantage of the spiking LSM over the ESN at N=800 (an
 For context, large language model performance scales approximately as:
 
 ```
-Loss ~ N^{-0.076}   (Chinchilla scaling law [11])
+Loss ~ N^{-0.076}   (Kaplan et al. 2020 scaling law [11])
 ```
 
 implying performance (inverse loss) scales as N^{+0.076} — a much slower improvement than our MC ~ N^{0.477}. However, these are fundamentally different quantities (linguistic task performance vs. memory capacity) and cannot be directly compared. The conceptual parallel is informative: both architectures show sub-linear scaling, and both suggest that architectural improvements (attention mechanisms for LLMs, spiking dynamics for OI) can break apparent scaling ceilings.
@@ -231,15 +233,15 @@ These results establish quantitative scaling benchmarks for the emerging field o
 
 [6] Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127–138. https://doi.org/10.1038/nrn2787
 
-[7] Bhattacharya, S. et al. (2024). Synaptic density and connectivity in human cortical organoids measured by electron microscopy. *Nature Neuroscience*, 27, 892–904.
+[7] Maass, W. (2000). On the computational power of winner-take-all. *Neural Computation*, 12(11), 2519–2535. https://doi.org/10.1162/089976600300014827
 
 [8] Izhikevich, E.M. (2003). Simple model of spiking neurons. *IEEE Transactions on Neural Networks*, 14(6), 1569–1572. https://doi.org/10.1109/TNN.2003.820440
 
-[9] Legenstein, R., & Maass, W. (2007). Edge of chaos and prediction of computational performance for neural circuit models. *Neural Networks*, 20(3), 323–334.
+[9] Legenstein, R., & Maass, W. (2007). Edge of chaos and prediction of computational performance for neural circuit models. *Neural Networks*, 20(3), 323–333.
 
 [10] Sussillo, D., & Abbott, L.F. (2009). Generating coherent patterns of activity from chaotic neural networks. *Neuron*, 63(4), 544–557. https://doi.org/10.1016/j.neuron.2009.07.018
 
-[11] Hoffmann, J. et al. (2022). Training compute-optimal large language models. *arXiv:2203.15556*.
+[11] Kaplan, J. et al. (2020). Scaling laws for neural language models. *arXiv:2001.08361*.
 
 ---
 
