@@ -1,5 +1,11 @@
 # Organoid Intelligence Research Foundation
-*Tyson — May 2026*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.8%2B-red.svg)](https://pytorch.org/)
+[![CUDA](https://img.shields.io/badge/CUDA-12.8-green.svg)](https://developer.nvidia.com/cuda-toolkit)
+
+*Tyson ([@aRCHITECT93](https://github.com/aRCHITECT93)) — May 2026*
 
 > Building the theoretical and computational foundation for organoid intelligence (OI) research.
 > No wetlab required — pure brain power + simulation + theory.
@@ -43,6 +49,18 @@ OI_Research/
 │
 └── data/                           ← For real organoid recordings (FinalSpark, Allen)
 ```
+
+---
+
+## Results
+
+### Organoid Scaling Laws (Original Research)
+![Scaling Laws](experiments/results/scaling/scaling_preprint.png)
+*Memory Capacity scales as MC ~ N^0.477 — more favorable than LLM scaling (Chinchilla: N^-0.076)*
+
+### DishBrain Pong Replication
+![Pong Learning Curve](experiments/results/pong_esn_v2.png)
+*ESN+FORCE controller achieves 67.4% hit rate — genuine learning from sparse reward signal*
 
 ---
 
