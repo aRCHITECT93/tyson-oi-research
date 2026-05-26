@@ -98,7 +98,8 @@ class PongGame:
                 reset        = True
                 self.reset()
 
-        s.total_steps += 1
+        # Increment on self.state (handles reset case where s is now stale)
+        self.state.total_steps += 1
         return s, reward, reset
 
     def shaped_reward(self) -> float:
